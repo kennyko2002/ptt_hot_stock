@@ -1,1 +1,1 @@
-web: sh setup.sh && streamlit run topfivestock.py
+web: sh setup.sh && streamlit run topfivestock_streamlit_h.py
