@@ -14,9 +14,9 @@ last_seven_day=[x.iloc[num,:].sort_values(ascending=False).index[0:6] for num in
 topfivestock=pd.DataFrame(last_seven_day,index=x.iloc[0:7,:].index)
 last_seven_day_hot=[x.iloc[num,:].sort_values(ascending=False)[0:6].tolist() for num in range(7)]
 topfivestock_hotindex=pd.DataFrame(last_seven_day_hot,index=x.iloc[0:7,:].index)
-
+topfivestock_hotindex.fillna(0)
 st.title("PTT 熱門討論股")
-st.table(topfivestock+'('+topfivestock_hotindex.astype(int).astype(str) +')')
+st.table(topfivestock+'('+topfivestock_hotindex.astype(str) +')')
 pyplot.rcParams['font.sans-serif'] = ['Microsoft JhengHei'] 
 pyplot.rcParams['axes.unicode_minus'] = False
 st.title("PTT 討論熱度趨勢")
